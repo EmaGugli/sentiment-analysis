@@ -1,6 +1,6 @@
 # Sentiment Analysis
-This project focuses on sentiment analysis using a logistic regression model trained on Danish sentences. The model is built to predict sentiment labels (positive, negative, neutral) based on input text, allowing for an understanding of the emotional tone or sentiment expressed in the provided text.
-It was used the multilingual "sentence-transformers/paraphrase-multilingual-mpnet-base-v2" model to encode the text.
+This project addresses the problem of sentiment analysis using a logistic regression model trained on Danish tweets. The model is built to predict sentiment labels (positive, negative, neutral) based on an input text, allowing for an understanding of the emotional tone or sentiment expressed in the provided text.
+The multilingual model "sentence-transformers/paraphrase-multilingual-mpnet-base-v2" was used to encode the text.
 
 ## Project Structure
 The project is organized as follows:
@@ -18,11 +18,11 @@ The project is organized as follows:
 ├── README.md
 └── requirements.txt
 ```
-data: Directory containing training and testing data in Parquet format. Downloaded from https://huggingface.co/datasets/DDSC/angry-tweets
+data: directory containing training and testing data in Parquet format. Downloaded from https://huggingface.co/datasets/DDSC/angry-tweets
 
-requirements.txt: File specifying the Python dependencies required for running the project.
+requirements.txt: file specifying the Python dependencies required for running the project.
 
-models: Directory containing the label encoder (label_encoder.joblib) and logistic regression model (logistic_regression_model.joblib) used for sentiment analysis.
+models: directory containing the label encoder (label_encoder.joblib) and logistic regression model (logistic_regression_model.joblib) used for sentiment analysis.
 
 src/train.py: Script for training the logistic regression model. The script uses the SentenceTransformer library to embed text and trains a logistic regression model on the labeled data. The trained model and label encoder are saved in the models directory.
 ```bash
