@@ -4,12 +4,19 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, f1_score, fbeta_score
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
+import argparse
 
 # choose a multilingual text embedder
 embedder = SentenceTransformer('sentence-transformers/paraphrase-multilingual-mpnet-base-v2')
 
-train = pd.read_parquet("data/train-00000-of-00001.parquet")
-test = pd.read_parquet("data/test-00000-of-00001.parquet")
+parser = argparse.ArgumentParser(description='Train model')
+parser.add_argument('--train', required=True, help='Path to the training parquet file')
+parser.add_argument('--test', required=True, help='Path to the testing parquet file')
+
+args = parser.parse_args()
+
+train = pd.read_parquet(args.train)
+test = pd.read_parquet(args.test)
 
 # Create embeddings
 train["embeddings"] = train["text"].apply(embedder.encode)

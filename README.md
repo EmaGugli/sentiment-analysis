@@ -25,6 +25,9 @@ requirements.txt: File specifying the Python dependencies required for running t
 models: Directory containing the label encoder (label_encoder.joblib) and logistic regression model (logistic_regression_model.joblib) used for sentiment analysis.
 
 src/train.py: Script for training the logistic regression model. The script uses the SentenceTransformer library to embed text and trains a logistic regression model on the labeled data. The trained model and label encoder are saved in the models directory.
+```bash
+python3 src/train.py --train data/train.parquet --test data/test.parquet
+```
 
 Dockerfile: Docker configuration file for containerizing the project and serving it through fastAPI. It uses the model files and the main.py script.
 
