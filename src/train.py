@@ -5,6 +5,7 @@ from sklearn.metrics import accuracy_score, f1_score, fbeta_score
 from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import argparse
+import joblib
 
 # choose a multilingual text embedder
 embedder = SentenceTransformer('sentence-transformers/paraphrase-multilingual-mpnet-base-v2')
@@ -51,7 +52,5 @@ f2 = fbeta_score(y_test, predictions, beta=2, average="weighted")
 print(f'F2 Score: {f2 * 100:.2f}%')
 
 # Save the label encoder and trained model
-import joblib
-
 joblib.dump(label_encoder, 'models/label_encoder.joblib')
 joblib.dump(model, 'models/logistic_regression_model.joblib')
