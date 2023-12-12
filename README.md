@@ -18,7 +18,8 @@ The project is organized as follows:
 ├── README.md
 └── requirements.txt
 ```
-data: Directory containing training and testing data in Parquet format.
+data: Directory containing training and testing data in Parquet format. Downloaded from https://huggingface.co/datasets/DDSC/angry-tweets
+
 requirements.txt: File specifying the Python dependencies required for running the project.
 
 models: Directory containing the label encoder (label_encoder.joblib) and logistic regression model (logistic_regression_model.joblib) used for sentiment analysis.
