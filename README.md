@@ -35,10 +35,10 @@ main.py: FastAPI application defining an API endpoint for sentiment analysis. Th
 
 ## Usage
 ```bash
-git clone <repository-url>
-cd <repository-directory>
-docker build -t sentiment-analysis-app .
-docker run -p 80:80 sentiment-analysis-app
+git clone https://github.com/EmaGugli/sentiment-analysis.git
+cd sentiment-analysis
+docker build -t sentiment-analysis .
+docker run -p 80:80 sentiment-analysis
 ```
 
 Access the API at http://localhost:80/docs to interact with the sentiment analysis endpoint.
